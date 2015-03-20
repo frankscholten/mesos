@@ -306,6 +306,10 @@ AS_IF([test "x${ac_cv_env_CXXFLAGS_set}" = "x"],
 # (--with-XXX=DIR) or asked us to attempt to detect them
 # (--disable-bundled).
 
+# Colorize the build output if supported by the compiler
+if $(shell echo "int main(){}" | $(CXX) -fdiagnostics-color -x c - -o /dev/null 2>&1) eq ""; then
+  CXXFLAGS="$CXXFLAGS -fdiagnostics-color=auto"
+fi
 
 # Check if LevelDB prefix path was supplied and if so, add it to
 # CPPFLAGS while extending it by /include and to LDFLAGS while

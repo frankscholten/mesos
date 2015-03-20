@@ -1,0 +1,2 @@
+http://vmrob.com/colorized-makefiles/
+https://gist.github.com/vmrob/8924878
